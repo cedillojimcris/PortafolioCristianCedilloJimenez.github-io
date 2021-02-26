@@ -1,0 +1,14 @@
+SELECT a.nombreA, a.id_alumno, c.id_cita
+FROM cita c
+INNER JOIN alumno a 
+ON a.id_alumno = c.id_alumnoFK
+WHERE id_cita = 5 AND id_alumnoFK =3
+
+
+
+Query para eliminar citas 
+SELECT id_cita,id_alumno,estadoCita, diaCita, horaCita, fechaGestionCita, estadoAlumno, numero_cuenta, nombreA, apellido_paternoA,apellido_maternoA, id_terapeuta,nombreT,apellido_paternoT,apellido_maternoT  FROM cita INNER JOIN alumno INNER JOIN terapeuta WHERE id_alumno= 3 AND id_cita = 2 AND id_terapeuta = 1
+
+
+
+DELETE FROM cita WHERE cita.id_cita = 2

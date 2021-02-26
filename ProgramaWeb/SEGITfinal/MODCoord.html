@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/iconos/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/iconos/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/iconos/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/iconos/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/iconos/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/iconos/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/iconos/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/iconos/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/iconos/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/iconos/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/iconos/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/iconos/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/iconos/favicon-16x16.png">
+    <link rel="manifest" href="images/iconos/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/iconos/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+<title>Modificar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Medical Appointment Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs Sign up Web Templates, 
+ Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<link href="css/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
+<link href="css/style.css" rel='stylesheet' type='text/css' /><link href="css/style.css" rel='stylesheet' type='text/css' />
+<!--fonts--> 
+<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+<!--//fonts--> 
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="https://kit.fontawesome.com/9c7010aff9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!--background-->
+
+ <h1> </h1>
+
+    <div class="bg-agile">
+    	
+    	
+	<div class="book-appointment">
+
+	<h1 style="color:white";> MODIFICACIONES <h1> 
+
+		<h2></h2>   
+	  
+
+	
+				
+
+			<form action="#" method="post" name="appointment" id="appointment" >
+
+			<div id="resultados_ajax" class="gaps"></div>
+			<div class="left-agileits-w3layouts same">
+			
+
+					
+		
+							 <div id="contenido">
+  	<table style="margin: auto; width: 800px; border-collapse: separate; border-spacing: 10px 5px;">
+  		<thead>
+  			
+  			<th style="color:white";>No.Cuenta</th>
+  			<th style="color:white";>Nombre</th>
+  			
+  			
+  			<th> </th>
+  		</thead>
+  		
+  		
+  		<?php
+      include "conexion.php";
+      $sentencia="SELECT * FROM productos";
+      $resultado=mysql_query($sentencia);
+      while($filas=mysql_fetch_assoc($resultado))
+      {
+        echo "<tr>";
+          echo "<td style="color:white";>"; echo $filas['no']; echo "</td>";
+          echo "<td style="color:white";>"; echo $filas['id_producto']; echo "</td>";
+         
+          echo "<td>  <a href='modif_prod1.php?no=".$filas['no']."'> <button type='button' class='btn btn-success'>Modificar</button> </a> </td>";
+        
+        echo "</tr>";
+      }
+
+      ?>
+  	</table>
+  </div>
+
+			<input type="submit" onclick="location.href= 'index.html'" value="SALIR"  style="margin-left: 10px ">
+	
+							</div>
+
+
+							<div class="right-agileinfo same">
+								
+
+
+
+			<div class="clear"></div>
+						 
+						  </div>
+			<div class="clear"></div>
+						 
+						  </div>
+			<div class="clear"></div>
+				<div class="right-agileinfo same">		
+
+						 
+
+			</form>
+ 
+
+
+   <!--copyright-->
+
+			<div class="copy w3ls">
+		       <p>  <a href="http://w3layouts.com/" target="_blank"></a> </p>
+	        </div>
+		<!--//copyright-->
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/wickedpicker.js"></script>
+			<script type="text/javascript">
+				$('.timepicker').wickedpicker({twentyFour: false});
+			</script>
+		<!-- Calendar -->
+				<link rel="stylesheet" href="css/jquery-ui.css" />
+				<script src="js/jquery-ui.js"></script>
+				  <script>
+						  $(function() {
+							$( "#datepicker,#datepicker1,#datepicker2,#datepicker3" ).datepicker();
+						  });
+						  
+				  </script>
+			<!-- //Calendar -->
+			<script>
+				$( "#appointment" ).submit(function( event ) {
+				  var parametros = $(this).serialize();
+				  $.ajax({
+						type: "POST",
+						url: "enviar-mail.php",
+						data: parametros,
+						 beforeSend: function(objeto){
+							$("#resultados_ajax").html("");
+						  },
+						success: function(datos){
+							$("#resultados_ajax").html(datos);
+						}
+				});
+			
+				  event.preventDefault();
+				});
+			</script>	
+
+</body>
+</html>
